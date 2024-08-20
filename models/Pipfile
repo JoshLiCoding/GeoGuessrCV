@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+jupyterlab = "*"
+pillow = "*"
+scikit-learn = "*"
+scikit-image = "*"
+matplotlib = "*"
+numpy = "*"
+tqdm = "*"
+pandas = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.10"
