@@ -5,6 +5,7 @@ from io import BytesIO
 import time
 
 # Single out 1 city at a time to run for consistent scraping results
+# Use below alternatives to fetch more images in case of poor image quality, update code accordingly
 # Paris alternative: https://www.instantstreetview.com/@48.850354,2.324601,284.53h,5p,1z,CAoSLEFGMVFpcE5HclpUNWN5OS1UTVh4ZGxlRDZtanJYaExpekMyV0tndF9kUnRo
 # Toronto alternative: https://www.instantstreetview.com/@43.659784,-79.382745,-81.03h,5p,1z,offNuI0FRzrYox3PjtmeiQ
 cities = {
@@ -26,6 +27,6 @@ for city, url in cities.items():
         time.sleep(3)
         img = driver.get_screenshot_as_png()
         im = Image.open(BytesIO(img))
-        im = im.crop((0, 350, 3000, 1300))
+        im = im.crop((0, 350, 3000, 1300)) # crop out ads and blank space
         im.save(city + '/' + str(i) + '.png')
 driver.quit()
