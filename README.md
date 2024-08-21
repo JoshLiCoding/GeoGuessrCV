@@ -20,7 +20,7 @@ Histogram of Oriented Gradient (HOG) is an image processing technique that 1) ex
 
 Next, a Support Vector Machine (SVM) performs multi-class prediction using flattened HOG vectors. With GridSearchCV, I found the rbf kernel and a regularization parameter (C) of 10 to be the best hyperparameter values. This yields an accuracy of **68%** and a confusion matrix as follows:
 
-<img src="readme-images/HOGConfM.png" width=300>
+<img src="readme-images/HOGConfM.png" width=400>
 
 Clearly, the model has the hardest time deciding between Toronto and Paris. This makes sense with the style of buildings we see!
 
@@ -38,9 +38,11 @@ The CNN is trained with mini-batch GD for 10 epochs. With relatively arbitrary a
 
 Let's also visualize the performance of the model (with parameters from the best-performing epoch) using a confusion matrix:
 
-<img src="readme-images/CNNConfM.png" width=300>
+<img src="readme-images/CNNConfM.png" width=400>
 
-We can see that, surprisingly, it tends to predict street views of Paris as LA. Finally, we can take a look at the weights of every convolution layer. Sometimes, this reveals insights into the patterns the model is trying to capture; in our case, it just shows the diverse ways our CNN uses filters.
+We can see that, surprisingly, it tends to predict street views of Paris as LA.
+
+Finally, we can take a look at the weights of every convolution layer. Sometimes, this reveals insights into the exact patterns the model is trying to capture; in our case, it just shows the many diverse filters we are employing.
 
 <img src="readme-images/CNNWeights.png" width=800>
 
