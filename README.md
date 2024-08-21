@@ -14,7 +14,7 @@ I used Selenium in Python to screen capture 200-300 images from each city with [
 
 _SKLearn, SKImage_
 
-Histogram of Oriented Gradient (HOG) is an image processing technique that 1) extracts gradients with Sobel filters, 2) subdivides these gradients into cells, 3) normalizes cells over larger blocks, and 4) compiles each cell into a histogram. HOG captures edges well and offers resiliency to geometric and photometric transformations. Below are some sample HOG transformations:
+Histogram of Oriented Gradient (HOG) is an image processing technique that 1) extracts gradients with Sobel filters, 2) subdivides these gradients into cells, 3) normalizes cells over larger blocks, and 4) compiles each cell into a histogram. HOG captures edges well and offers resiliency to geometric and photometric transformations. Below are some sample HOG transformations on my dataset:
 
 <img src="readme-images/HOG.png" width=300>
 
