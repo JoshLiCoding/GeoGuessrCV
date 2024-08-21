@@ -12,6 +12,8 @@ matplotlib = "*"
 numpy = "*"
 tqdm = "*"
 pandas = "*"
+torch = "*"
+torchvision = "*"
 
 [dev-packages]
 
