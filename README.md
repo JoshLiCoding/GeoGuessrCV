@@ -2,7 +2,7 @@
 
 [GeoGuessr](https://www.geoguessr.com/) is a popular web-based game that asks you to guess locations from Google Street View images. GeoGuessr professionals memorize many tricks to accurately guess their location.
 
-I'm not as good as GeoGuessr professionals, so can I use CV to differentiate between street views of Paris, Toronto and LA? Here, I experimented with 3 models: HOG + SVM, a custom CNN and a pretrained ResNet. ResNet predictably performed the best with ~75% accuracy, but a more detailed discussion is included below.
+I'm not as good as GeoGuessr professionals, so can I use CV to differentiate between street views of Paris, Toronto and LA? Here, I experimented with 3 models: HOG + SVM, a custom CNN and a pretrained ResNet.
 
 ## Web Scraping
 
