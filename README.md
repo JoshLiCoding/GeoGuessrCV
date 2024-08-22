@@ -12,7 +12,7 @@ I used Selenium in Python to screen capture 200-300 images from each city with [
 
 Some sample images:
 
-<img src="readme-images/sampleImages.png" width=600>
+<img src="readme-images/sampleImages.png" width=800>
 
 ## 1. HOG + SVM
 
