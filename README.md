@@ -2,13 +2,17 @@
 
 [GeoGuessr](https://www.geoguessr.com/) is a popular web-based game that asks you to guess locations from Google Street View images. GeoGuessr professionals memorize many tricks to accurately guess their location.
 
-To dumb things down a bit, can I use CV to differentiate between street views of Paris, Toronto and LA?
+I'm not as good as GeoGuessr professionals, so can I use CV to differentiate between street views of Paris, Toronto and LA? Here, I experimented with 3 models: HOG + SVM, a custom CNN and a pretrained ResNet. ResNet predictably performed the best with ~75% accuracy, but a more detailed discussion is included below.
 
 ## Web Scraping
 
 I used Selenium in Python to screen capture 200-300 images from each city with [Instant Street View](https://www.instantstreetview.com/), which provides Google Street View with location randomization. I manually filtered ~200 images based on quality, and reduced each image's dimension to 256x256.
 
 <img src="readme-images/webScrape.png" width=800>
+
+Some sample images:
+
+<img src="readme-images/sampleImages.png" width=600>
 
 ## 1. HOG + SVM
 
@@ -56,15 +60,15 @@ A Residual Neural Network (ResNet) connects traditional CNN layers with skip con
 
 _credit: https://www.researchgate.net/figure/Architecture-of-ResNet34-29_fig2_368590488_
 
-For this dataset, I loaded a pretrained ResNet34 model and and modified its fully connected layer to output 3 predictions. Since I am not retraining weights of the ResNet34 model (which essentially acts as a feature extractor) except the last layer, this falls within transfer learning. After 10 epochs, we obtain **~75% accuracy** on testing data. A sample learning curve looks like:
+For this dataset, I loaded a pretrained ResNet34 model and and modified its fully connected layer to output 3 predictions. Since I am not retraining weights of the original ResNet34 model (which essentially acts as a feature extractor), this is known as transfer learning. After 10 epochs, we obtain **~75% accuracy** on testing data. A sample learning curve looks like:
 
 <img src="readme-images/ResNetCurve.png" width=400>
 
-And like the CNN model, we can plot the confusion matrix:
+Similar to the CNN model, we can plot the confusion matrix:
 
 <img src="readme-images/ResNetConfM.png" width=400>
 
-Although the model seems to confuse LA with Toronto, the pretrained ResNet performed the best overall!
+This model seems to confuse LA with Toronto instead. Nevertheless, the pretrained ResNet performed the best overall!
 
 ### Credits
 
